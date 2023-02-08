@@ -1,8 +1,7 @@
+datalogger.deleteLog(datalogger.DeleteType.Fast)
+datalogger.includeTimestamp(FlashLogTimeStampFormat.Minutes)
 datalogger.setColumnTitles("temp")
-loops.everyInterval(500, function () {
-    datalogger.includeTimestamp(FlashLogTimeStampFormat.Seconds)
+loops.everyInterval(600000, function () {
+    datalogger.includeTimestamp(FlashLogTimeStampFormat.Minutes)
     datalogger.log(datalogger.createCV("temp", input.temperature()))
-})
-basic.forever(function () {
-	
 })
